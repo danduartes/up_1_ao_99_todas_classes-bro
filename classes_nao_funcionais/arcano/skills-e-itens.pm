@@ -1,7 +1,7 @@
 automacro configurarRelâmpago {
     SkillLevel MG_LIGHTNINGBOLT > 0
     ConfigKeyNot attackSkillSlot_0 MG_LIGHTNINGBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -31,7 +31,7 @@ automacro configurarRelâmpago {
 automacro configurarLançasDeGelo {
     SkillLevel MG_COLDBOLT > 1
     ConfigKeyNot attackSkillSlot_1 MG_COLDBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -62,7 +62,7 @@ automacro configurarLançasDeGelo {
 automacro configurarLançasDeFogo {
     SkillLevel MG_FIREBOLT > 0
     ConfigKeyNot attackSkillSlot_2 MG_FIREBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -95,7 +95,7 @@ automacro configurarAtaqueEspiritual {
     SkillLevel MG_NAPALMBEAT > 0
     SkillLevel MG_SOULSTRIKE < 3
     ConfigKeyNot attackSkillSlot_3 MG_NAPALMBEAT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -123,7 +123,7 @@ automacro configurarAtaqueEspiritual {
 automacro configurarEspirítosAnciões {
     SkillLevel MG_SOULSTRIKE >= 3
     ConfigKeyNot attackSkillSlot_3 MG_SOULSTRIKE
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -151,7 +151,7 @@ automacro configurarEspirítosAnciões {
 automacro configurarProteçãoArcana {
     SkillLevel MG_ENERGYCOAT 1
     ConfigKeyNot useSelf_skill_4 MG_ENERGYCOAT
-    priority 5
+    priority 1004
     exclusive 1
     call {
         [
@@ -180,7 +180,7 @@ automacro configurarProteçãoArcana {
 automacro configurarAmplificaçãoMística {
     SkillLevel HW_MAGICPOWER >= 1
     ConfigKeyNot useSelf_skill_5 HW_MAGICPOWER
-    priority 0
+    priority 999
     exclusive 1
     call {
         [

@@ -475,7 +475,7 @@ macro objetivoCompleto {
 automacro chegueiEmJuno {
     InMap yuno
     CheckOnAI manual
-    priority -20 #prioridade alta
+    priority 979 #prioridade alta
     ConfigKeyNot aeroplano1 none, aeroplano2 none
     exclusive 1
     call {

@@ -87,7 +87,7 @@ automacro questRenascer_chegueilvl99 {
 automacro questRenascer_salvarNaCidadeQueVouUparEDefinirVariavel {
     ConfigKey questRenascer_estagio preparando
     exclusive 1
-    priority -10 #prioridade mais alta
+    priority 989 #prioridade mais alta
     run-once 1
     QuestInactive 1000
     call {
@@ -117,7 +117,7 @@ automacro questRenascer_chamarAmigo {
     CheckOnAI auto,manual
     BaseLevel = 99
     JobLevel = 50
-    priority -5 #prioridade alta
+    priority 994 #prioridade alta
     QuestInactive 1000
     call {
         $vezesQueTentouZerarPeso++
@@ -181,7 +181,7 @@ automacro questRenascer_irNoLocalPraNegociar {
 automacro questRenascer__amigoPertoMasNaoTaoPerto {
     CharCurrentWeight 0
     Zeny != 1285000
-    priority -5
+    priority 994
     ConfigKey questRenascer_estagio preparando
     InMap yuno
     IsInMapAndCoordinate $parametrosQuestClasseRenascer{pontoDeEncontroX} $parametrosQuestClasseRenascer{pontoDeEncontroY}
@@ -206,7 +206,7 @@ automacro questRenascer__amigoPertoMasNaoTaoPerto {
 automacro questRenascer_amigoPertoPedindoTrade {
     CharCurrentWeight 0
     Zeny != 1285000
-    priority -5
+    priority 994
     ConfigKey questRenascer_estagio preparando
     InMap yuno
     IsInMapAndCoordinate $parametrosQuestClasseRenascer{pontoDeEncontroX} $parametrosQuestClasseRenascer{pontoDeEncontroY}
@@ -232,7 +232,7 @@ automacro questRenascer_amigoPertoPedindoTrade {
 automacro questRenascer_amigoPertoRecebiTrade {
     CharCurrentWeight 0
     Zeny != 1285000
-    priority -5
+    priority 994
     ConfigKey questRenascer_estagio preparando
     InMap yuno
     PlayerNearDist /\Q$parametrosQuestClasseRenascer{amigo}\E/ < 3
@@ -253,7 +253,7 @@ automacro questRenascer_dandoOuReceBendoZeny {
     ConfigKey questRenascer_estagio preparando
     PlayerNearDist /\Q$parametrosQuestClasseRenascer{amigo}\E/ < 3
     SimpleHookEvent engaged_deal
-    priority -5
+    priority 994
     QuestInactive 1000
     call {
         lock questRenascer_amigoPertoPedindoTrade

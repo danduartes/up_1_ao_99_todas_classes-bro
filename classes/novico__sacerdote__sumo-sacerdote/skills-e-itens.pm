@@ -3,7 +3,7 @@
 automacro configurarCurar {
     SkillLevel AL_HEAL >= 2
     ConfigKeyNot useSelf_skill_0 AL_HEAL
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -29,7 +29,7 @@ automacro configurarCurar {
 automacro configurarAL_INCAGI {
     SkillLevel AL_INCAGI >= 1
     ConfigKeyNot useSelf_skill_1 AL_INCAGI
-    priority 1
+    priority 1000
     exclusive 1
     call {
         [
@@ -58,7 +58,7 @@ automacro configurarAL_INCAGI {
 automacro configurarAngelus {
     SkillLevel AL_ANGELUS >= 1
     ConfigKeyNot useSelf_skill_2 AL_ANGELUS
-    priority 2
+    priority 1001
     exclusive 1
     call {
         [
@@ -86,7 +86,7 @@ automacro configurarAngelus {
 automacro configurarAL_BLESSING {
     SkillLevel AL_BLESSING >= 1
     ConfigKeyNot useSelf_skill_3 AL_BLESSING
-    priority 3
+    priority 1002
     exclusive 1
     call {
         [
@@ -116,7 +116,7 @@ automacro configurarAL_BLESSING {
 automacro configurarKyrieEleison {
     SkillLevel PR_KYRIE >= 1
     ConfigKeyNot useSelf_skill_4 PR_KYRIE
-    priority 4
+    priority 1003
     exclusive 1
     call {
         [
@@ -145,7 +145,7 @@ automacro configurarKyrieEleison {
 automacro configurarMagnificat {
     SkillLevel PR_MAGNIFICAT >= 1
     ConfigKeyNot useSelf_skill_5 PR_MAGNIFICAT
-    priority 5
+    priority 1004
     exclusive 1
     call {
         [
@@ -173,7 +173,7 @@ automacro configurarMagnificat {
 automacro configurarGloria {
     SkillLevel PR_GLORIA >= 5
     ConfigKeyNot useSelf_skill_6 PR_GLORIA
-    priority 6
+    priority 1005
     exclusive 1
     call {
         [
@@ -201,7 +201,7 @@ automacro configurarGloria {
 automacro configurarGraçaDivina {
     SkillLevel PR_STRECOVERY >= 1
     ConfigKeyNot useSelf_skill_7 PR_STRECOVERY
-    priority 7
+    priority 1006
     exclusive 1
     call {
         [
@@ -227,7 +227,7 @@ automacro configurarGraçaDivina {
 automacro configurarImpositioManus {
     SkillLevel PR_IMPOSITIO >= 1
     ConfigKeyNot useSelf_skill_8 PR_IMPOSITIO
-    priority 8
+    priority 1007
     exclusive 1
     call {
         [
@@ -256,7 +256,7 @@ automacro configurarImpositioManus {
 automacro configurarCurarMortoVivos {
     SkillLevel AL_HEAL = 10
     ConfigKeyNot attackSkillSlot_0 AL_HEAL
-    priority 0
+    priority 999
     exclusive 1
     call {
         [

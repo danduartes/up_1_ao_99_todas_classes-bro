@@ -97,7 +97,7 @@ automacro questCacador_irAteACacadoraDaGuild {
     QuestInactive 4011
     QuestInactive 4012
     QuestInactive 4013
-    priority 2
+    priority 1001
     exclusive 1
     call {
         call pararDeAtacar
@@ -502,7 +502,7 @@ automacro questCacador_labirintoChatPerto {
     IsInCoordinate 164..187 18..41
     exclusive 1
     InMap job_hunte
-    priority -1
+    priority 998
     call {
         do chat join 0
     }

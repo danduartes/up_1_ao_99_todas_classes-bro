@@ -115,7 +115,7 @@ automacro definirVariavelSaveMap {
     ConfigKeyNot saveMap_posicaoKafra       none
     ConfigKeyNot saveMap_posicaoNpcVenda    none
     ConfigKey naSequenciaDeSalvamento true
-    priority -4
+    priority 995
     CheckOnAI auto, manual
     call {
         $saveMap = &config(saveMap_desejado)
@@ -220,7 +220,7 @@ automacro FalarComKafra {
 automacro SalvoNaKafra {
     exclusive 1
     CheckOnAI manual
-    priority -5
+    priority 994
     NpcMsgName /O seu Ponto (de Retorno )?foi salvo|saved here|foi salvo aqui na cidade|foi salvo em|foi salvo aqui/ /Kafra Employee|Funcionária Kafra|Corp|Kafra Recepc/
     ConfigKeyNot saveMap $saveMap
     ConfigKey naSequenciaDeSalvamento true

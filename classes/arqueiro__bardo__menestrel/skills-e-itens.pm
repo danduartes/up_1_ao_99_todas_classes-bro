@@ -2,7 +2,7 @@
 automacro configurarConcentracao {
     SkillLevel AC_CONCENTRATION >= 1
     ConfigKeyNot useSelf_skill_0 AC_CONCENTRATION
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -32,7 +32,7 @@ automacro configurarConcentracao {
 automacro configurarRajadaDeFlechas {
     SkillLevel AC_DOUBLE > 1
     ConfigKeyNot attackSkillSlot_0 AC_DOUBLE
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -216,7 +216,7 @@ automacro atacarSomenteNoLockMap {
     ConfigKey aeroplano2 none
     ConfigKey questRenascer_estagio none
     exclusive 1
-    priority 20 #baixa prioridade
+    priority 1019 #baixa prioridade
     JobIDNot 0 #Ou o campo de treinamento fica louco
     JobIDNot 4023 #Baby Aprendiz
     call {

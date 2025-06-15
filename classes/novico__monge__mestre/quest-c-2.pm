@@ -58,7 +58,7 @@ automacro configurarMonge1 {
     NotInMap prt_monk
     NotInMap monk_in
     JobLevel = 50
-    priority 2
+    priority 1001
     run-once 1
     QuestInactive 3016
     QuestInactive 3023
@@ -84,7 +84,7 @@ automacro configurarMonge1 {
 automacro virarMonge1 {
     InMap prt_monk
     QuestInactive 3016
-    priority 2
+    priority 1001
     run-once 1
     call {
         do move prt_monk 57 245
@@ -98,7 +98,7 @@ automacro virarMonge1 {
 ##
 automacro virarMonge2 {
     QuestActive 3016
-    priority 2
+    priority 1001
     run-once 1
     call {
         do move monk_in 99 56
@@ -111,7 +111,7 @@ automacro virarMonge2 {
 #5 Espinhos de Porco-Espinho, 20 Teias de Aranha e 10 Patas de Inseto #
 automacro virarMonge3 {
     QuestActive 3023
-    priority 2
+    priority 1001
     timeout 300
     call {
         do pconf 1027 1

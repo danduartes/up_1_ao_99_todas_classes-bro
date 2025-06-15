@@ -77,7 +77,7 @@ automacro campoDeAprendiz_entrar {
     exclusive 1
     QuestActive 7117
     InMap new_1-1, new_2-1, new_3-1, new_4-1, new_5-1
-    priority 1
+    priority 1000
     call entrarNoCastelo
 }
 
@@ -86,7 +86,7 @@ automacro moveInsideBugged1 {
     QuestInactive 7117
     BaseLevel = 2
     InMap new_1-1, new_2-1, new_3-1, new_4-1, new_5-1
-    priority 1
+    priority 1000
     call entrarNoCastelo
 }
 
@@ -98,7 +98,7 @@ automacro campoDeAprendiz_entrar_bugado {
     QuestActive 7118
     BaseLevel = 2
     InMap new_1-1, new_2-1, new_3-1, new_4-1, new_5-1
-    priority 1
+    priority 1000
     call entrarNoCastelo
 }
 
@@ -116,7 +116,7 @@ automacro campoDeAprendiz_irAteSprakki {
     NpcNotNear /Sprakki/
     BaseLevel = 1
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 1
+    priority 1000
     call irAteSprakki
 }
 
@@ -126,7 +126,7 @@ automacro campoDeAprendiz_irAteSprakki_bugado1 {
     BaseLevel = 2
     NpcNotNear /Sprakki/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 1
+    priority 1000
     call irAteSprakki
 }
 
@@ -139,7 +139,7 @@ automacro campoDeAprendiz_irAteSprakki_bugado2 {
     BaseLevel = 2
     NpcNotNear /Sprakki/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 1
+    priority 1000
     call irAteSprakki
 }
 
@@ -153,7 +153,7 @@ automacro campoDeAprendiz_falarComSprakki_bugado1 {
     BaseLevel = 2
     NpcNear /Sprakki/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 0
+    priority 999
     call falarComSprakki
 }
 
@@ -166,7 +166,7 @@ automacro campoDeAprendiz_falarComSprakki_bugado2 {
     BaseLevel = 2
     NpcNear /Sprakki/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 0
+    priority 999
     call falarComSprakki
 }
 
@@ -179,7 +179,7 @@ automacro campoDeAprendiz_falarComSprakki {
     BaseLevel = 1
     NpcNear /Sprakki/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 0
+    priority 999
     call falarComSprakki
 }
 
@@ -196,7 +196,7 @@ automacro campoDeAprendiz_irAteBrade1 {
     QuestActive 7118
     NpcNotNear /Brade/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 2
+    priority 1001
     call moverAteBrade
 }
 
@@ -208,7 +208,7 @@ automacro campoDeAprendiz_irAteBrade2 {
     QuestActive 7119
     NpcNotNear /Brade/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 2
+    priority 1001
     call moverAteBrade
 }
 
@@ -220,7 +220,7 @@ automacro campoDeAprendiz_irAteBrade_bugado {
     InInventoryID 5055 = 0  # Chapéu de Ovo do Aprendiz
     NpcNotNear /Brade/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 1
+    priority 1000
     call moverAteBrade
 }
 
@@ -237,7 +237,7 @@ automacro campoDeAprendiz_falarComBrade {
     BaseLevel = 2
     NpcNear /Brade/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 0
+    priority 999
     call {
         do pconf 5055 0 # Chapéu de Ovo do Aprendiz
         do pconf 2510 0 # Capuz do Aprendiz
@@ -257,7 +257,7 @@ automacro campoDeAprendiz_falarComBrade_bugado {
     InInventoryID 5055 = 0  # Chapéu de Ovo do Aprendiz
     NpcNear /Brade/
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
-    priority 0
+    priority 999
     call {
         do pconf 5055 0 # Chapéu de Ovo do Aprendiz
         do pconf 2510 0 # Capuz do Aprendiz
@@ -336,7 +336,7 @@ automacro campoDeAprendiz_irAteJinha {
     QuestActive 7120
     NpcNotNear /Jinha/
     SkillLevel NV_FIRSTAID = 0
-    priority 0
+    priority 999
     call moveAteJinha
 }
 
@@ -369,7 +369,7 @@ automacro campoDeAprendiz_falarComJinha {
     QuestActive 7120
     NpcNear /Jinha/
     SkillLevel NV_FIRSTAID = 0
-    priority 0
+    priority 999
     call TalkJinha
 }
 
@@ -422,7 +422,7 @@ automacro campoDeAprendiz_falarComBradeTerceiraVez {
     QuestActive 7120
     SkillLevel NV_FIRSTAID = 1
     NpcNear /Brade/
-    priority 0
+    priority 999
     call falarComBrade_pegarTunica
 }
 
@@ -444,7 +444,7 @@ automacro campoDeAprendiz_irAteChoco {
     IsEquippedID armor 2393
     InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
     NpcNotNear /Choco/
-    priority 1
+    priority 1000
     call {
         do move 32 171
     }
@@ -470,7 +470,7 @@ automacro campoDeAprendiz_irAteOsGuias {
     exclusive 1
     QuestActive 7121
     NpcNotNear /(Choco|Kafra|Zonda|Soldado)/
-    priority 0
+    priority 999
     call {
         do move 32 171
     }
@@ -555,7 +555,7 @@ automacro campoDeAprendiz_irParaOsCamposDoBrade {
     InInventoryID 13040 = 0
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
     NpcNotNear /Brade/
-    priority 1
+    priority 1000
     call moverAteBrade_campoDeBatalha
 }
 
@@ -589,7 +589,7 @@ automacro campoDeAprendiz_irAteBradeQuestCompleta {
     QuestHuntCompleted 7122 1002
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
     NpcNotNear /Brade/
-    priority 1
+    priority 1000
     call moverAteBrade_campoDeBatalha
 }
 
@@ -734,7 +734,7 @@ automacro campoDeAprendiz_comecarQuestPickyMoverPerto {
     QuestInactive 7123
     QuestInactive 7124
     exclusive 1
-    priority -5
+    priority 994
     run-once 1
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
     call moverPertoDosNpc
@@ -746,7 +746,7 @@ automacro campoDeAprendiz_comecarQuestPicky {
     QuestInactive 7123
     QuestInactive 7124
     exclusive 1
-    priority -5
+    priority 994
     run-once 1
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
     call {
@@ -768,7 +768,7 @@ automacro campoDeAprendiz_comecarQuestSalgueiroMoverPerto {
     QuestActive 7123
     QuestInactive 7127
     QuestInactive 7124
-    priority -5
+    priority 994
     exclusive 1
     run-once 1
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
@@ -784,7 +784,7 @@ automacro campoDeAprendiz_comecarQuestSalgueiro {
     QuestInactive 7127
     QuestInactive 7124
     NpcNear /Thief|Gatuno/
-    priority -5
+    priority 994
     exclusive 1
     run-once 1
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
@@ -1002,7 +1002,7 @@ automacro campoDeAprendiz_seMorrerEnquantoUpaAteLv12 {
 automacro campoDeAprendiz_seMorrerEnquantoMataPickysESalgueiros {
     QuestActive 7123, 7127
     CurrentHP >= 50%
-    priority 5
+    priority 1004
     InMap new_1-3, new_2-3, new_3-3
     exclusive 1
     call mudarDeMapa
@@ -1024,7 +1024,7 @@ automacro campoDeAprendiz_terminouDeUpar {
     BaseLevel > 11
     ConfigKey quest_atual todas_completadas
     InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
-    priority 1
+    priority 1000
     call {
         call pararDeAtacar
         do move &rand(103,105) &rand(36,38)

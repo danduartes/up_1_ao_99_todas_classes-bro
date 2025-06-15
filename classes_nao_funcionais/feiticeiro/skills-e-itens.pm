@@ -1,7 +1,7 @@
 automacro configurarLancasDeGelo {
     SkillLevel MG_COLDBOLT > 1
     ConfigKeyNot enhancedCasting_0 MG_COLDBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -32,7 +32,7 @@ automacro configurarLancasDeGelo {
 automacro configurarLancasDeFogo {
     SkillLevel MG_FIREBOLT > 0
     ConfigKeyNot enhancedCasting_1 MG_FIREBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -63,7 +63,7 @@ automacro configurarLancasDeFogo {
 automacro configurarRelampago {
     SkillLevel MG_LIGHTNINGBOLT > 0
     ConfigKeyNot enhancedCasting_2 MG_LIGHTNINGBOLT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -93,7 +93,7 @@ automacro configurarAtaqueEspiritual {
     SkillLevel MG_NAPALMBEAT > 0
     SkillLevel MG_SOULSTRIKE < 3
     ConfigKeyNot enhancedCasting_3 MG_NAPALMBEAT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -122,7 +122,7 @@ automacro configurarAtaqueEspiritual {
 automacro configurarEspiritosAncioes {
     SkillLevel MG_SOULSTRIKE >= 3
     ConfigKeyNot enhancedCasting_3 MG_SOULSTRIKE
-    priority 0
+    priority 999
     exclusive 1
     call {
         [

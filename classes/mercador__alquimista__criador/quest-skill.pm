@@ -263,7 +263,7 @@ automacro FalComGuardaRekenber {
     ConfigKeyNot passoQuestBioetica none
     ConfigKey quest_skill true
     IsInMapAndCoordinate lhz_in01 37 225
-    priority -5 #alta
+    priority 994 #alta
     exclusive 1
     call {
         do conf -f tenhoQueFalarComGuarda none

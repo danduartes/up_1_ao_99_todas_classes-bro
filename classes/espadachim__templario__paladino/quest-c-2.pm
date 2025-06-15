@@ -198,7 +198,7 @@ automacro virarTemplario_ComprarHiper_poucoZeny {
     InInventoryID 14586 = 0 #Doce Hiper Açucarado
     ConfigKey BetterShopper_0 Doce Hiper Açucarado
     exclusive 1
-    priority -3
+    priority 996
     Zeny < 40000
     QuestActive 3009
     timeout 30
@@ -220,7 +220,7 @@ automacro virarTemplario_ComprarHiper {
     InInventoryID 14586 = 0 #Doce Hiper Açucarado
     ConfigKeyNot BetterShopper_0 Doce Hiper Açucarado
     exclusive 1
-    priority -3
+    priority 996
     Zeny >= 40000
     QuestActive 3009
     call {
@@ -249,7 +249,7 @@ automacro virarTemplario_ComprarPotBranca {
     InInventoryID 504 = 0 #Poção Branca
     ConfigKeyNot BetterShopper_1 Poção Branca
     exclusive 1
-    priority -2
+    priority 997
     QuestActive 3009
     call {
         do conf lockMap prontera
@@ -276,7 +276,7 @@ automacro virarTemplario_ComparBalaDeGuaraná {
     InInventoryID 12414 = 0 #Bala de Guaraná
     QuestActive 3009
     exclusive 1
-    priority -1
+    priority 998
     ConfigKeyNot BetterShopper_2 Bala de Guaraná
     call {
         do conf lockMap prontera
@@ -602,7 +602,7 @@ automacro virarTemplario_matarBixos_dentroDoMapa {
     exclusive 1
     InMap job_cru
     QuestActive 3014
-    priority -5
+    priority 994
     ConfigKeyNot questTemplario entreiNoChat
     call {
         do chat join 0

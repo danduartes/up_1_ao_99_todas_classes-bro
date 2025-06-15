@@ -200,7 +200,7 @@ automacro questLuzDivina_falarComNpc {
 automacro questLuzDivina_aprendiLuzDivina {
     ConfigKey quest_skill true
     SkillLevel AL_HOLYLIGHT = 1
-    priority -1
+    priority 998
     exclusive 1
     call {
         [
@@ -220,7 +220,7 @@ automacro comprandoCristalAzulAdoidadoBug {
     ConfigKey BetterShopper_1 Cristal Azul
     ConfigKeyNot BetterShopper_1_disabled 1
     InInventoryID 991 > 0
-    priority -10
+    priority 989
     call {
         do conf BetterShopper_1_disabled 1
     }
@@ -233,7 +233,7 @@ automacro comprandoOpalaAdoidadoBug {
     ConfigKey BetterShopper_0 Opala
     ConfigKeyNot BetterShopper_0_disabled 1
     InInventoryID 727 > 0
-    priority -10
+    priority 989
     call {
         do conf BetterShopper_0_disabled 1
     }
@@ -246,7 +246,7 @@ automacro comprandoCristalAzulAdoidadoBug2 {
     ConfigKey BetterShopper_1 Cristal Azul
     ConfigKeyNot BetterShopper_1_disabled 1
     InInventory "Cristal Azul" > 0
-    priority -10
+    priority 989
     call {
         do conf BetterShopper_1_disabled 1
     }
@@ -259,14 +259,14 @@ automacro comprandoOpalaAdoidadoBug2 {
     ConfigKey BetterShopper_0 Opala
     ConfigKeyNot BetterShopper_0_disabled 1
     InInventory "Opala" > 0
-    priority -10
+    priority 989
     call {
         do conf BetterShopper_0_disabled 1
     }
 }
 
 automacro betterShopper_bugged {
-    priority -5
+    priority 994
     exclusive 1
     ConfigKey BetterShopper_on 1
     ConfigKey quest_skill true

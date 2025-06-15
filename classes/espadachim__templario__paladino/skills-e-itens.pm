@@ -99,7 +99,7 @@ automacro pegarPeco_irAteNpc {
     StatusInactiveHandle EFST_RIDING
     NpcNotNear /Peco Peco/
     Zeny >= 3500
-    priority -3
+    priority 996
     BaseLevel != 99
     call {
         do move prontera 232 318 &rand(3,7)
@@ -111,7 +111,7 @@ automacro pegarPeco {
     exclusive 1
     StatusInactiveHandle EFST_RIDING
     NpcNear /Peco Peco/
-    priority -3
+    priority 996
     BaseLevel != 99
     Zeny >= 3500
     call {

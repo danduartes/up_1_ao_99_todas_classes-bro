@@ -1,6 +1,6 @@
 automacro inicializar {
     run-once 1
-    priority -998 #pioridade alta, sempre vai ser a segunda a executar
+    priority 1 #pioridade alta, sempre vai ser a segunda a executar
     exclusive 1
     BaseLevel > 0
     call {
@@ -81,7 +81,7 @@ automacro inicializar {
 
 automacro atualizarBuild {
     BaseLevel > 0
-    priority -997 #sempre a terceira a executar
+    priority 2 #sempre a terceira a executar
     timeout 600 #atualiza as variáveis a cada 10 minutos
     exclusive 1
     call atualizarBuild
@@ -250,7 +250,7 @@ automacro atualizarMapasDeUp_hook {
 automacro atualizarMapasDeUp_ACada5Minutos {
     timeout 300
     exclusive 1
-    priority -997 #sempre a quarta a executar
+    priority 2 #sempre a quarta a executar
     BaseLevel != 99 #se estivermos lvl 99, não precisamos definir mapa de up
     call atualizarMapasDeUp
 }
