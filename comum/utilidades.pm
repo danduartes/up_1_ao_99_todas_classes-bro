@@ -1,7 +1,7 @@
 automacro utilidades_configEstaErrada {
     exclusive 1
     overrideAI 1
-    priority -5
+    priority 994
     ConfigKeyNot autoTalkCont 1
     call {
         log Tem uma config que está errada
@@ -559,7 +559,7 @@ automacro mostrarAjuda {
     timeout 600 #10 minutos
     BaseLevel > 0
     exclusive 1
-    priority 9999999 #menor prioridade
+    priority 10000998 #menor prioridade
     call ajuda
 }
 

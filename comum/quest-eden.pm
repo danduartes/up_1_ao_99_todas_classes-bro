@@ -45,14 +45,14 @@ automacro questEden_trocarEmblemaIndoProNpc {
     InInventoryID 6219 = 1 #emblema do grupo valhalla (o antigo)
     NpcNotNear /Lenore|Lime/
     exclusive 1
-    priority -2 # um pouco alta
+    priority 997 # um pouco alta
     call moverPertoDosNpcEden
 }
 
 automacro questEden_trocarEmblema {
     InInventoryID 6219 = 1 #emblema do grupo valhalla (o antigo)
     exclusive 1
-    priority -2 # um pouco alta
+    priority 997 # um pouco alta
     NpcNear /Lenore|Lime/
     call {
         do talk $.NpcNearLastBinId

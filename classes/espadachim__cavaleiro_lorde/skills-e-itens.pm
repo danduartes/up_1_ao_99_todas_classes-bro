@@ -21,7 +21,7 @@ automacro configurarGolpeFulminante {
 automacro configurarVigor {
     SkillLevel SM_ENDURE = 10
     ConfigKeyNot useSelf_skill_0 SM_ENDURE
-    priority 0
+    priority 999
     exclusive 1
     call {
         $blocoExiste = checarSeExisteNoConfig("useSelf_skill_0")
@@ -84,7 +84,7 @@ automacro pegarPeco_irAteNpc {
     NpcNotNear /Criador de Pecopecos/
     Zeny >= 3500
     BaseLevel != 99
-    priority -3
+    priority 996
     call {
         do move prontera 50 341 &rand(3,7)
     }
@@ -95,7 +95,7 @@ automacro pegarPeco {
     exclusive 1
     StatusInactiveHandle EFST_RIDING
     NpcNear /Criador de Pecopecos/
-    priority -3
+    priority 996
     BaseLevel != 99
     Zeny >= 3500
     call {

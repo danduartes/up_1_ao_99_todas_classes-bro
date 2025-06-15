@@ -2,7 +2,7 @@
 automacro configurarConcentracao {
     SkillLevel AC_CONCENTRATION >= 1
     ConfigKeyNot useSelf_skill_0 AC_CONCENTRATION
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -33,7 +33,7 @@ automacro configurarConcentracao {
 automacro configurarVisaoReal {
     SkillLevel SN_SIGHT >= 1
     ConfigKeyNot useSelf_skill_1 SN_SIGHT
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -63,7 +63,7 @@ automacro configurarVisaoReal {
 automacro configurarCaminhoDoVento {
     SkillLevel SN_WINDWALK >= 1
     ConfigKeyNot useSelf_skill_2 SN_WINDWALK
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -93,7 +93,7 @@ automacro configurarCaminhoDoVento {
 automacro configurarRajadaDeFlechas {
     SkillLevel AC_DOUBLE > 1
     ConfigKeyNot attackSkillSlot_0 AC_DOUBLE
-    priority 0
+    priority 999
     exclusive 1
     call {
         [
@@ -182,7 +182,7 @@ automacro pegarFalcao_irAteNpc {
     StatusInactiveHandle EFST_FALCON
     NpcNotNear /Falcoeiro/
     Zeny >= 3500
-    priority -3
+    priority 996
     BaseLevel != 99
     call {
         do conf saveMap izlude
@@ -204,7 +204,7 @@ automacro pegarFalcao_jaEstouEmHugel_irAteNpc {
     StatusInactiveHandle EFST_FALCON
     NpcNotNear /Falcoeiro/
     Zeny >= 3500
-    priority -3
+    priority 996
     BaseLevel != 99
     call {
         do move hu_in01 385 307 &rand(3,7)
@@ -222,7 +222,7 @@ automacro pegarFalcao {
     exclusive 1
     StatusInactiveHandle EFST_FALCON
     NpcNear /Falcoeiro/
-    priority -3
+    priority 996
     BaseLevel != 99
     Zeny >= 3500
     call {
@@ -371,7 +371,7 @@ automacro atacarSomenteNoLockMap {
     ConfigKey aeroplano2 none
     ConfigKey questRenascer_estagio none
     exclusive 1
-    priority 20 #baixa prioridade
+    priority 1019 #baixa prioridade
     JobIDNot 0 #Ou o campo de treinamento fica louco
     JobIDNot 4023 #Baby Aprendiz
     call {

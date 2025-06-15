@@ -32,7 +32,7 @@ automacro virarAlquimistaInicio_IrNoNpc {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     JobLevel = 50
     FreeSkillPoints = 0
-    priority 2
+    priority 1001
     exclusive 1
     ConfigKeyNot virarAlquimista true
     NpcNotNear /Alquimista sênior/
@@ -53,7 +53,7 @@ automacro virarAlquimistaInicio_IrNoNpc {
 automacro virarAlquimistaInicio {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     JobLevel = 50
-    priority 2
+    priority 1001
     timeout 30
     ConfigKeyNot virarAlquimista true
     NpcNear /Alquimista sênior/
@@ -488,7 +488,7 @@ automacro virarAlquimista_entregueiAFlor {
     ConfigKey questAlquimista jaPegueiAFlor
     exclusive 1
     NpcMsgName /torne-se um Alquimista de verdade/ /Pesquisador/
-    priority -5 #alto
+    priority 994 #alto
     call {
         pause 1
         do conf -f questAlquimista fimDaQuest
@@ -540,7 +540,7 @@ automacro virarAlquimista_FimDaQuest_FalarComAlquimistaChefe {
 automacro jaSouAlquimista {
     JobID $parametrosClasses{idC2}, $parametrosClasses{idBC2}
     ConfigKey questAlquimista fimDaQuest
-    priority -5
+    priority 994
     exclusive 1
     call {
         do conf teleportAuto_MaxDmg 1000

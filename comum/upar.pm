@@ -13,7 +13,7 @@ automacro UpClasse {
     ConfigKey aeroplano2 none
     ConfigKey questRenascer_estagio none
     exclusive 1
-    priority 20 #baixa prioridade
+    priority 1019 #baixa prioridade
     timeout 30
     JobIDNot 0 #Ou o campo de treinamento fica louco
     JobIDNot 4023 #Baby Aprendiz
@@ -28,7 +28,7 @@ automacro UpClasse3rd {
     ConfigKey aeroplano1 none
     ConfigKey aeroplano2 none
     exclusive 1
-    priority 20 #baixa prioridade
+    priority 1019 #baixa prioridade
     timeout 30
     JobID $parametrosClasses{idC3}, $parametrosClasses{idC3Alt}, $parametrosClasses{idBC3}, $parametrosClasses{idCB3Alt}
     call upar

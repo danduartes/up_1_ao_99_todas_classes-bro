@@ -25,7 +25,7 @@ automacro virarArruaceiroInicio_salvarEmMorocc {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     JobLevel >= $configsBuild{lvlClasseParaVirarClasse2}
     FreeSkillPoints = 0
-    priority 2
+    priority 1001
     exclusive 1
     ConfigKeyNot saveMap morocc
     ConfigKeyNot naSequenciaDeSalvamento true
@@ -45,7 +45,7 @@ automacro virarArruaceiroInicio_IrNoNpc {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     JobLevel >= $configsBuild{lvlClasseParaVirarClasse2}
     FreeSkillPoints = 0
-    priority 2
+    priority 1001
     exclusive 1
     ConfigKey saveMap morocc
     NpcNotNear /Arruaceira da Guilda/
@@ -66,7 +66,7 @@ automacro virarArruaceiroInicio_IrNoNpc {
 automacro virarArruaceiroInicio {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     JobLevel >= $configsBuild{lvlClasseParaVirarClasse2}
-    priority 2
+    priority 1001
     exclusive 1
     NpcNear /Arruaceira da Guilda/
     QuestInactive 2017
@@ -317,7 +317,7 @@ automacro virarArruaceiro_etapa4 {
     JobID $parametrosClasses{idC1}, $parametrosClasses{idBC1}
     exclusive 1
     CurrentHP >= 80%
-    priority 5 #prioridade baixa
+    priority 1004 #prioridade baixa
     delay 5
     QuestActive 2022, 2023, 2024
     call {
@@ -379,7 +379,7 @@ macro irAteLocal_questArruaceiro {
 automacro virarArruaceiro_etapa5_DentroDaCasa {
     IsInMapAndCoordinate in_rogue 169 34, in_rogue 246 25, in_rogue 164 106
     exclusive 1
-    priority -5
+    priority 994
     call {
         switch ($.pos) {
             case (= 169 34) {
