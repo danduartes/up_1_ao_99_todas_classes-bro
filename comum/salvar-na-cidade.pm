@@ -1,5 +1,7 @@
 macro salvarNaCidade {
     call pararDeAtacar
+    release definirVariavelSaveMap
+    $saveMap = undef
     do conf lockMap none
     if (&config(master) =~ /Valhalla/ ) {
         do conf -f saveMap_sequenciaPraArmazenar r1 r0
