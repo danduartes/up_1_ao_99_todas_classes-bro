@@ -65,7 +65,7 @@ macro salvarNaCidade {
         }
         case (=~ /izlude/i ) {
             do conf -f saveMap_desejado izlude
-            do conf -f saveMap_posicaoKafra 134 88
+            do conf -f saveMap_posicaoKafra 128 148
             do conf -f saveMap_posicaoNpcVenda izlude 105 99
             do conf -f saveMap_posicaoNpcPraPocao izlude_in 115 61
         }
