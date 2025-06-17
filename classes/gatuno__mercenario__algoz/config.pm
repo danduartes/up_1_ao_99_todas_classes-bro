@@ -83,3 +83,10 @@ sub inicializarParametrosQuestClasseRenascer {
     return \%parametrosQuestClasseRenascer;
 }
 
+
+sub inicializarInicioBarcoNaufragado {
+    my %inicioBarco = (
+        inicioBarcoNaufragado => 'true'
+    );
+    return \%inicioBarco;
+}

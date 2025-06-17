@@ -51,3 +51,10 @@ sub inicializarParametrosQuestClasseRenascer {
     #oboro não reborna
 }
 
+
+sub inicializarInicioBarcoNaufragado {
+    my %inicioBarco = (
+        inicioBarcoNaufragado => 'true'
+    );
+    return \%inicioBarco;
+}
