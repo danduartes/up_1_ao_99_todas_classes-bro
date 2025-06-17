@@ -46,26 +46,9 @@ if (! $job) {
         
         $configuracoes = New-Object Configuracoes
     } else {
-            inicioBarcoNaufragado = $null;
-    $inicioBarco = "true"
-    if ($configsPersonalizadas -and $configsPersonalizadas.SelectedObject) {
-        $inicioBarco = $configsPersonalizadas.SelectedObject.inicioBarcoNaufragado
-    } else {
-        $linhaInicio = Select-String -Path "classes/$jobSimples/config.pm" -Pattern "inicioBarcoNaufragado" | Select-Object -First 1
-        if ($linhaInicio) {
-            $inicioBarco = ($linhaInicio.Line -replace ".*=>\s*'([^']+)'.*", '$1')
-        }
-    }
-    if ($inicioBarco -eq 'true') {
-        Get-Content -Encoding UTF8 comum\barco-naufragado.pm | Out-File $eventMacros -Encoding UTF8 -append
-        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object { Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append }
-    } else {
-        Get-Content -Encoding UTF8 comum\campo-de-aprendiz.pm | Out-File $eventMacros -Encoding UTF8 -append
-        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object { Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append }
-    }
-        $configuracoes = New-Object -TypeName PSObject -Prop @{ 
+        $configuracoes = New-Object -TypeName PSObject -Prop @{
             skillsAprendiz = $null;
-            skillsClasse1 = $null; 
+            skillsClasse1 = $null;
             skillsClasse2 = $null;
             skillsClasse1T = $null;
             skillsClasse2T = $null;
@@ -115,7 +98,24 @@ function gerarMacro {
     $automacroVersao = $automacroVersao -replace "<versao>",$versao
     $automacroVersao | Out-File $eventMacros -Encoding UTF8 -append 
     Get-Content -Encoding UTF8 classes\$jobSimples\*.pm | Out-File $eventMacros -Encoding UTF8 -append
-    Get-Content -Encoding UTF8 comum\*.pm | Out-File $eventMacros -Encoding UTF8 -append
+
+    $inicioBarco = 'true'
+    $linhaInicio = Select-String -Path "classes/$jobSimples/config.pm" -Pattern "inicioBarcoNaufragado" | Select-Object -First 1
+    if ($linhaInicio) {
+        $inicioBarco = ($linhaInicio.Line -replace ".*=>\s*'([^']+)'.*", '$1')
+    }
+
+    if ($inicioBarco -eq 'true') {
+        Get-Content -Encoding UTF8 comum\barco-naufragado.pm | Out-File $eventMacros -Encoding UTF8 -append
+        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object {
+            Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append
+        }
+    } else {
+        Get-Content -Encoding UTF8 comum\campo-de-aprendiz.pm | Out-File $eventMacros -Encoding UTF8 -append
+        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object {
+            Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append
+        }
+    }
 }
 
 function salvarBuild {
