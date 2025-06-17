@@ -50,3 +50,10 @@ sub inicializarParametrosQuestClasseRenascer {
     #só de estar vazia é o suficiente para não ocorrer erros
     #kagerou não reborna
 }
+
+sub inicializarInicioBarcoNaufragado {
+    my %inicioBarco = (
+        inicioBarcoNaufragado => 'true'
+    );
+    return \%inicioBarco;
+}

@@ -1,7 +1,7 @@
 param ( [string]$job )
 
-#Por questıes de compatibilidade esse arquivo precisa ser aberto em 
-#codificaÁ„o ISO 8859-1 (ANSI) e n„o UTF-8
+#Por quest√µes de compatibilidade esse arquivo precisa ser aberto em 
+#codifica√ß√£o ISO 8859-1 (ANSI) e n√£o UTF-8
 
 if (! $job) {
     Add-Type -AssemblyName System.Windows.Forms
@@ -38,6 +38,7 @@ if (! $job) {
                 public String pontoDeEncontroY { get; set; }
                 public String lvlClasseParaVirarClasse2 { get; set; }
                 public String lvlClasseParaVirarClasse2T { get; set; }
+                public String inicioBarcoNaufragado { get; set; }
 
             }
         '
@@ -45,7 +46,23 @@ if (! $job) {
         
         $configuracoes = New-Object Configuracoes
     } else {
-        [System.Windows.Forms.MessageBox]::Show( "O powershell do seu sistema operacional È muito antigo. As configuraÁıes personalizadas ser√£o apenas leitura para visualizaÁ„o", "Aviso" )
+            inicioBarcoNaufragado = $null;
+    $inicioBarco = "true"
+    if ($configsPersonalizadas -and $configsPersonalizadas.SelectedObject) {
+        $inicioBarco = $configsPersonalizadas.SelectedObject.inicioBarcoNaufragado
+    } else {
+        $linhaInicio = Select-String -Path "classes/$jobSimples/config.pm" -Pattern "inicioBarcoNaufragado" | Select-Object -First 1
+        if ($linhaInicio) {
+            $inicioBarco = ($linhaInicio.Line -replace ".*=>\s*'([^']+)'.*", '$1')
+        }
+    }
+    if ($inicioBarco -eq 'true') {
+        Get-Content -Encoding UTF8 comum\barco-naufragado.pm | Out-File $eventMacros -Encoding UTF8 -append
+        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object { Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append }
+    } else {
+        Get-Content -Encoding UTF8 comum\campo-de-aprendiz.pm | Out-File $eventMacros -Encoding UTF8 -append
+        Get-ChildItem comum\*.pm | Where-Object { $_.Name -ne 'campo-de-aprendiz.pm' -and $_.Name -ne 'barco-naufragado.pm' } | ForEach-Object { Get-Content -Encoding UTF8 $_.FullName | Out-File $eventMacros -Encoding UTF8 -append }
+    }
         $configuracoes = New-Object -TypeName PSObject -Prop @{ 
             skillsAprendiz = $null;
             skillsClasse1 = $null; 
@@ -75,14 +92,14 @@ function getVersao {
         $version = $commitCounter + "." + $hash 
         
     }catch{
-        [System.Windows.Forms.MessageBox]::Show( "Git n„o instalado, n„o vai ser exibida a vers„o", "Erro" )
+        [System.Windows.Forms.MessageBox]::Show( "Git n√£o instalado, n√£o vai ser exibida a vers√£o", "Erro" )
     }
     return $version
 }
 
 function limparNomeDaClasse {
     Param($classe)
-    return $classe.ToString().ToLower().Replace(" ","-").Replace("Ì","i").Replace("˙","u").Replace("„","a").Replace("‚","a").Replace("·","a")
+    return $classe.ToString().ToLower().Replace(" ","-").Replace("√≠","i").Replace("√∫","u").Replace("√£","a").Replace("√¢","a").Replace("√°","a")
 }
 
 function gerarMacro {
@@ -146,7 +163,7 @@ function acaoCarregarConfiguracoes {
         foreach($line in Get-Content -Encoding UTF8 $arquivo) {
 
             if($line -match "^\s+\w+\s+=>\s+'.*"){
-                Write-Host "Linha de configuraÁ„o: $line"
+                Write-Host "Linha de configura√ß√£o: $line"
                 $chave = $line -replace "\s+(\w+)\s+\=\>.*",'$1'
                 $valor = $line -replace ".*'(.*)'.*",'$1'
                 
@@ -166,7 +183,7 @@ function acaoCarregarConfiguracoes {
 
 function desenharJanela {
     $versao = getVersao
-    $Form.Text = "Gerador eventMacros.txt vers„o: " + $versao
+    $Form.Text = "Gerador eventMacros.txt vers√£o: " + $versao
     $Form.TopMost = $true
     $Form.Width = 800
     $Form.Height = 600
@@ -202,7 +219,7 @@ function desenharJanela {
    
     $painelSuperior.Controls.Add($labelConfigsPersonalizadas);
     $labelConfigsPersonalizadas.Dock = [System.Windows.Forms.DockStyle]::Bottom
-    $labelConfigsPersonalizadas.Text = "ConfiguraÁıes Personalizadas"
+    $labelConfigsPersonalizadas.Text = "Configura√ß√µes Personalizadas"
 
      
 
@@ -227,7 +244,7 @@ function desenharJanela {
 function carregarValores {
     
     $classes = "espadachim__cavaleiro_lorde", "espadachim__templario__paladino",  "arqueiro__cacador__atirador-de-elite", "arqueiro__bardo__menestrel", "arqueira__odialisca__cigana", "mercador__ferreiro__mestre-ferreiro", "mercador__alquimista__criador", "gatuno__mercenario__algoz", "gatuno__arruaceiro__desordeiro", "novico__sacerdote__sumo-sacerdote", "novico__monge__mestre"
-    $icones = "Cavaleiro R˙nico", "Guardi„o Real", "Sentinela", "Trovador", "Musa", "Mec‚nico", "BioquÌmico", "Sic·rio", "Renegado", "Arcebispo", "Shura"
+    $icones = "Cavaleiro R√∫nico", "Guardi√£o Real", "Sentinela", "Trovador", "Musa", "Mec√¢nico", "Bioqu√≠mico", "Sic√°rio", "Renegado", "Arcebispo", "Shura"
 
     For ($i=0; $i -lt $classes.Count; $i++) {
         $listItemClasse = New-Object System.Windows.Forms.ListViewItem
@@ -256,7 +273,7 @@ function updater {
         $versao_atual = (git rev-list --count origin/master) | Out-String
         $versao_local = (git rev-list --count master) | Out-String
         if($versao_atual -ne $versao_local) {
-            $confirmacao = [System.Windows.Forms.MessageBox]::Show( "Nova vers„o dispon√≠vel. Gostaria de atualizar sua vers„o?", "Vers„o desatualizada", [Windows.Forms.MessageBoxButtons]::YesNo )
+            $confirmacao = [System.Windows.Forms.MessageBox]::Show( "Nova vers√£o dispon√É¬≠vel. Gostaria de atualizar sua vers√£o?", "Vers√£o desatualizada", [Windows.Forms.MessageBoxButtons]::YesNo )
             if ($confirmacao -eq "YES"){
                 git stash save
                 git pull --rebase
