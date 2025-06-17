@@ -100,9 +100,16 @@ function gerarMacro {
     Get-Content -Encoding UTF8 classes\$jobSimples\*.pm | Out-File $eventMacros -Encoding UTF8 -append
 
     $inicioBarco = 'true'
-    $linhaInicio = Select-String -Path "classes/$jobSimples/config.pm" -Pattern "inicioBarcoNaufragado" | Select-Object -First 1
-    if ($linhaInicio) {
-        $inicioBarco = ($linhaInicio.Line -replace ".*=>\s*'([^']+)'.*", '$1')
+    if ($null -ne $configuracoes -and $null -ne $configuracoes.inicioBarcoNaufragado) {
+        $inicioBarco = $configuracoes.inicioBarcoNaufragado
+    } else {
+        $configFilePath = "classes/$jobSimples/config.pm"
+        if (Test-Path $configFilePath) {
+            $linhaInicio = Select-String -Path $configFilePath -Pattern "inicioBarcoNaufragado" | Select-Object -First 1
+            if ($linhaInicio) {
+                $inicioBarco = ($linhaInicio.Line -replace ".*=>\s*'([^']+)'.*", '$1')
+            }
+        }
     }
 
     if ($inicioBarco -eq 'true') {
